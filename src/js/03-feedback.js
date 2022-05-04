@@ -25,7 +25,7 @@ const submitHandler = e => {
 
 function rewriteInputData() {
   if (savedDataValue) {
-    Object.keys(savedDataValue || {}).forEach(item => (userForm[item].value = savedDataValue[item]));
+    Object.keys(savedDataValue).forEach(item => (userForm[item].value = savedDataValue[item]));
   }
 }
 
