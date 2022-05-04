@@ -29,3 +29,9 @@ const submitHandler = e => {
 
 userFeedbackForm.addEventListener('input', throttle(inputHandler, 500));
 userFeedbackForm.addEventListener('submit', submitHandler);
+
+function babelTest() {
+   console.log(BabelTest);
+};
+
+babelTest();
