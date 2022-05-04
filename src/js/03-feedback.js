@@ -20,7 +20,7 @@ const submitHandler = e => {
   }
   localStorage.removeItem(FORM_DATA);
   e.currentTarget.reset();
-  console.log(formData);
+  console.log(savedDataValue);
 };
 
 function rewriteInputData() {
