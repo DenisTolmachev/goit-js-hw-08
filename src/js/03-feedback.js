@@ -3,10 +3,9 @@ import throttle from 'lodash.throttle';
 const userForm = document.querySelector('.feedback-form');
 const FORM_DATA = 'feedback-form-state';
 let formData = {};
+const savedDataValue = JSON.parse(localStorage.getItem(FORM_DATA));
 
-console.log(userForm.elements.value);
-
-writeInputData();
+rewriteInputData();
 
 const inputHandler = e => {
   formData[e.target.name] = e.target.value;
@@ -24,10 +23,11 @@ const submitHandler = e => {
   console.log(formData);
 };
 
-function writeInputData() {
+function rewriteInputData() {
   const savedDataValue = JSON.parse(localStorage.getItem(FORM_DATA));
+
   if (savedDataValue) {
-   userForm.elements.value = savedDataValue.value;
+    Object.keys(savedDataValue).forEach(item => (userForm[item].value = savedDataValue[item]));
   }
 }
 
