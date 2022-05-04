@@ -3,7 +3,6 @@ import throttle from 'lodash.throttle';
 const userForm = document.querySelector('.feedback-form');
 const FORM_DATA = 'feedback-form-state';
 let formData = {};
-const savedDataValue = JSON.parse(localStorage.getItem(FORM_DATA));
 
 rewriteInputData();
 
@@ -33,6 +32,8 @@ function rewriteInputData() {
 
 userForm.addEventListener('input', throttle(inputHandler, 500));
 userForm.addEventListener('submit', submitHandler);
+
+//Варіант який не білдиться на GitHub
 
 // const userFeedbackForm = document.querySelector('.feedback-form');
 // const FORM_DATA = 'feedback-form-state';
